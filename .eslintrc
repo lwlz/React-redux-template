@@ -1,0 +1,59 @@
+{
+    "extends": [
+        "airbnb",
+        "prettier",
+        "prettier/react"
+    ],
+    "plugins": [
+        "prettier"
+    ],
+    "globals": {
+        "window": true
+    },
+    "rules": {
+        "prettier/prettier": [
+            "error",
+            {
+                "trailingComma": "none",
+                "singleQuote": true,
+                "printWidth": 120,
+                "tabWidth": 4,
+                "jsxSingleQuote": true,
+                "jsxBracketSameLine": true,
+                "arrowParens": "always"
+            }
+        ],
+        "no-undef": 1,
+        "react/prop-types": 0,
+        "react/prefer-stateless-function": 0,
+        "react/jsx-no-bind": [
+            "error",
+            {
+                "ignoreRefs": true,
+                "allowArrowFunctions": true,
+                "allowFunctions": false,
+                "allowBind": false,
+                "ignoreDOMComponents": true
+            }
+        ],
+        "react/destructuring-assignment": [
+            0,
+            "always",
+            {
+                "ignoreClassFields": false
+            }
+        ],
+        "prefer-destructuring": 0,
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx",
+                    ".ts",
+                    ".tsx"
+                ]
+            }
+        ]
+    }
+}
