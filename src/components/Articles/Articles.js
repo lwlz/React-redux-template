@@ -66,14 +66,14 @@ class Articles extends PureComponent {
 
     
     render() {
-        const { data } = this.props.articlesRed;
+        const { data, totalElements } = this.props.articlesRed;
         
         return (
             <div>
                 <DisplayArticles params={{ data: data, handleSelectArticle: this.handleSelectArticle }}/>
                 <div style={{ marginTop:32,marginBottom:32, display:'flex', flexDirection:'row-reverse'}}>
                     <Pagination
-                        count={15}
+                        count={Math.round(totalElements/15)+ 1 }
                         color='primary'
                         onChange={(event, page) => {this.changePage(page)}}
                     />

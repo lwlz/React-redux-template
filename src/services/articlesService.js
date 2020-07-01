@@ -4,7 +4,14 @@ export default class ArticlesService {
        
         try {
             const articles = await API.get(`photos?_page=${params.pageUrl}&_limit=${params.size}`);
-            return articles;
+            const totalArticles = await API.get(`photos`);
+            const totalElements = totalArticles.data.length
+
+            const response = {
+                articles,
+                totalElements
+            }
+            return response;
         } catch (err) {
             return Promise.reject(err);
         }

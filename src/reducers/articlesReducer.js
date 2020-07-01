@@ -20,11 +20,10 @@ export default createReducer(initialState, {
     [rc.ARTICLES_LIST_SUCCESS]: (state, action) => {
         return {
             ...state,
-            data: action.result.data,
+            data: action.result.articles.data,
             isError: false,
             isLoading: false,
-            totalElements: action.result.totalElements || 0,
-            currentPage: action.result.currentPage || 0
+            totalElements: action.result.totalElements || 0
         };
     },
 
