@@ -3,16 +3,19 @@ import Carousel from 'react-bootstrap/Carousel';
 
 const tileData = [
     {
+        id: '1',
         img: 'https://cdn.pixabay.com/photo/2018/02/04/09/09/brushes-3129361_960_720.jpg',
         title: 'lorem epsum',
         author: 'author'
     },
     {
+        id: '2',
         img: 'https://cdn.pixabay.com/photo/2016/12/01/06/38/texture-1874557_960_720.jpg',
         title: 'epsum lorem ',
         author: 'author'
     },
     {
+        id: '3',
         img: 'https://cdn.pixabay.com/photo/2018/07/14/15/27/cafe-3537801_960_720.jpg',
         title: 'loreem epsss',
         author: 'author'
@@ -24,7 +27,7 @@ const Home = () => {
         <>
             <Carousel>
                 {tileData.map((c) => (
-                    <Carousel.Item>
+                    <Carousel.Item key={c.id}>
                         <img className='d-block w-100' src={c.img} alt={c.title} />
                         <Carousel.Caption>
                             <h3>{c.title}</h3>
