@@ -4,7 +4,6 @@ import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Container from '@material-ui/core/Container';
-import * as counterActions from './actions/counterActions';
 import * as articlesActions from './actions/articlesActions';
 import Basket from './components/Basket/Basket';
 import Articles from './components/Articles/Articles';
@@ -33,12 +32,10 @@ const App = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-    counterRed: state.counterReducer,
     articlesRed: state.articlesReducer
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    counterActions: bindActionCreators(counterActions, dispatch),
     articlesActions: bindActionCreators(articlesActions, dispatch)
 });
 
