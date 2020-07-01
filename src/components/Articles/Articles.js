@@ -2,12 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import history from '../../utils/history';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import IconButton from '@material-ui/core/IconButton';
-import InfoIcon from '@material-ui/icons/Info';
-import AddIcon from '@material-ui/icons/Add';
+import DisplayArticles from './DisplayArticles'
 import Pagination from '@material-ui/lab/Pagination';
 import * as articlesActions from '../../actions/articlesActions';
 import * as basketActions from '../../actions/basketActions';
@@ -72,32 +67,10 @@ class Articles extends PureComponent {
     
     render() {
         const { data } = this.props.articlesRed;
-     
+        
         return (
             <div>
-                <GridList
-                    spacing={42}
-                    cellHeight={350}
-                    cols={3}
-                >
-                    {data.map((tile) => (
-                        <GridListTile
-                            key={tile.id}
-                        >
-                            <img src={tile.url} alt={tile.title} />
-                            <GridListTileBar
-                                title={tile.title}
-                                subtitle={<span>Ref Color: {tile.id}</span>}
-                                actionIcon={
-                                    <IconButton onClick={()=> this.handleSelectArticle(tile)}>
-                                        <AddIcon style={{ color: 'white'}} />
-                                    </IconButton>
-                                }
-                            />
-                        </GridListTile>
-                    ))}
-                </GridList>
-
+                <DisplayArticles params={{ data: data, handleSelectArticle: this.handleSelectArticle }}/>
                 <div style={{ marginTop:32,marginBottom:32, display:'flex', flexDirection:'row-reverse'}}>
                     <Pagination
                         count={15}

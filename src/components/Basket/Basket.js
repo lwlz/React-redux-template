@@ -63,9 +63,9 @@ class Basket extends Component {
         if (selectedItems.length === 0) {
             basketDisplay = 
             <div> 
-                😭
-            <br></br>
-                Your Basket is empty
+            <span role='img' aria-label='nono'>😭</span>
+            <br/>
+            Your Basket is empty
             </div>
         }
 
