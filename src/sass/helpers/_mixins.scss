@@ -1,0 +1,19 @@
+@mixin display-flex() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin absolutePosition($left: 50%, $top: 50%, $translateX: -50%, $translateY: -50%) {
+  position: absolute;
+  left: $left;
+  top: $top;
+  transform: translate($translateX, $translateY);
+}

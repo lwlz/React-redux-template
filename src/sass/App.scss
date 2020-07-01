@@ -1,0 +1,19 @@
+@import "~bootstrap/scss/bootstrap";
+
+@import "./base/base";
+@import "./base/fonts";
+@import "./base/reset";
+@import "./helpers/mixins";
+@import "./helpers/variables";
+@import "../components/Footer/footer";
+@import "../components/Navigation/navbar";
+@import "../components/Home/home";
+
+body {
+    position: relative;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+        "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

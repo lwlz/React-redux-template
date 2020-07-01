@@ -1,0 +1,150 @@
+.home-section {
+  &--hero {
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    @include display-flex();
+    @media (max-width: 883px) {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    h3 {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 15px;
+      color: $blue;
+    }
+
+    .left-part {
+      width: 50%;
+      @media (max-width: 883px) {
+        width: auto;
+      }
+    }
+    .right-part {
+      width: 50%;
+      @media (max-width: 883px) {
+        width: auto;
+      }
+    }
+    h1 {
+      color: $brown;
+      font-size: 65px;
+      font-weight: bold;
+    }
+  }
+
+  &--overview {
+    .interface-wrapper {
+      @include display-flex();
+      justify-content: center;
+      align-items: center;
+      @media (max-width: 650px) {
+        flex-direction: column;
+      }
+    }
+
+    .interface-item {
+      width: calc(100% / 3);
+      text-align: center;
+      margin: 20px;
+      @media (max-width: 650px) {
+        width: auto;
+      }
+    }
+    &--content {
+      margin-top: 30px;
+    }
+
+    h3 {
+      font-weight: 700;
+      color: #b56969;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+
+    .interface-thumbnail {
+      margin-bottom: 20px;
+
+      img {
+        height: 200px;
+        border-radius: 200px;
+        box-shadow: $shadow;
+      }
+    }
+  }
+
+  &--features {
+    .features-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 40px;
+      @supports not (display: grid) {
+        float: left;
+      }
+      @media (max-width: 650px) {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-card {
+        background: $blue-light;
+        padding: 25px;
+        text-align: center;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+        &:hover {
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        }
+      }
+
+      p {
+        font-size: 12px;
+      }
+
+      .card-icon {
+        background: white;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        @include absolutePosition(50%, -20%, -50%, 0%);
+
+        i {
+          @include absolutePosition();
+        }
+      }
+      h4 {
+        font-weight: bold;
+        letter-spacing: 3px;
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  &--demo {
+    h2 {
+      color: #fff;
+    }
+    p {
+      color: #fff;
+    }
+  }
+
+  &--register {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    .register-form {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 40px;
+    }
+  }
+}
